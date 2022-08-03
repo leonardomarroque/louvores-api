@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "C:\\Users\\030091845\\Documents\\contatos-api\\node_modules\\nodemon\\bin\\nodemon index.js",
     "start": "node index.js"

@@ -4,4 +4,4 @@ const Contatos = {
   },
 };
 
-module.exports = Contatos;
+export default Contatos;

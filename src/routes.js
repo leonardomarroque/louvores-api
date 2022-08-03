@@ -1,8 +1,8 @@
-const Router = require("express");
-const Contatos = require("./controllers/Contatos");
+import Router from "express";
+import Contatos from "./controllers/Contatos.js";
 
 const router = Router();
 
 router.get("/contatos", Contatos.all);
 
-module.exports = router;
+export default router;
