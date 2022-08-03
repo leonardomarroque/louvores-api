@@ -1,8 +1,9 @@
-import Router from "express";
-import Contatos from "./controllers/Contatos.js";
+const express = require("express");
+const ContatosController = require("./controllers/Contatos");
 
-const router = Router();
+const router = express.Router();
 
-router.get("/contatos", Contatos.all);
+router.get("/contatos", ContatosController.all);
+router.post("/contatos", ContatosController.create);
 
-export default router;
+module.exports = router;
