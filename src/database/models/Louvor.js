@@ -9,7 +9,7 @@ const Louvor = sequelize.define("louvor", {
 });
 
 const init = async () => {
-  await Louvor.sync();
+  await Louvor.sync({ alter: true });
 };
 
 init();

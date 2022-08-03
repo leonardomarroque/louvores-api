@@ -12,10 +12,16 @@ const Louvores = {
   create(req, res, next) {
     const { titulo, autor, numero } = req.body;
 
-    Louvor.create({
-      titulo,
-      autor,
-      numero,
+    Louvor.findOrCreate({
+      where: {
+        numero: numero,
+        autor: autor
+      },
+      defaults: {
+        titulo: titulo,
+        autor: autor,
+        numero: numero
+      }
     })
       .then((result) => {
         res.status(201).json(result); //return with ID -> 201 (CREATED)
