@@ -1,8 +1,8 @@
-const Contato = require("../database/models/Contato");
+const Louvor = require("../database/models/Louvor");
 
-const Contatos = {
+const Louvores = {
   all(req, res, next) {
-    Contato.findAll()
+    Louvor.findAll()
       .then((result) => {
         res.json(result);
       })
@@ -10,12 +10,12 @@ const Contatos = {
   },
 
   create(req, res, next) {
-    const { nome, sobrenome, codigo } = req.body;
+    const { titulo, autor, numero } = req.body;
 
-    Contato.create({
-      nome,
-      sobrenome,
-      codigo,
+    Louvor.create({
+      titulo,
+      autor,
+      numero,
     })
       .then((result) => {
         res.status(201).json(result); //return with ID -> 201 (CREATED)
@@ -24,4 +24,4 @@ const Contatos = {
   }
 };
 
-module.exports = Contatos;
+module.exports = Louvores;

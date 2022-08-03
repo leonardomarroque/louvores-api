@@ -1,9 +1,9 @@
 const express = require("express");
-const ContatosController = require("./controllers/Contatos");
+const LouvoresController = require("./controllers/Louvores");
 
 const router = express.Router();
 
-router.get("/contatos", ContatosController.all);
-router.post("/contatos", ContatosController.create);
+router.get("/louvores", LouvoresController.all);
+router.post("/louvores", LouvoresController.create);
 
 module.exports = router;
