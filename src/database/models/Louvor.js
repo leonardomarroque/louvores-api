@@ -5,11 +5,11 @@ const sequelize = require("../sequelize");
 const Louvor = sequelize.define("louvor", {
   titulo: DataTypes.STRING,
   autor: DataTypes.STRING,
-  numero: DataTypes.INTEGER,
+  numero: DataTypes.STRING,
 });
 
 const init = async () => {
-  await Louvor.sync({ alter: true });
+  await Louvor.sync(/* { alter: true } */);
 };
 
 init();
