@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "C:\\Users\\030091845\\Documents\\louvores-api\\node_modules\\nodemon\\bin\\nodemon index.js",
+    "dev": "C:\\Users\\030091845\\Documents\\icm\\louvores-api\\node_modules\\nodemon\\bin\\nodemon index.js",
     "start": "node index.js"
   },
   "author": "",

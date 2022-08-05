@@ -10,17 +10,17 @@ const Louvores = {
   },
 
   create(req, res, next) {
-    const { titulo, autor, numero } = req.body;
+    const louvor = req.body;
 
     Louvor.findOrCreate({
       where: {
-        numero: numero,
-        autor: autor
+        numero: louvor.numero,
+        autor: louvor.autor
       },
       defaults: {
-        titulo: titulo,
-        autor: autor,
-        numero: numero
+        titulo: louvor.titulo,
+        autor: louvor.autor,
+        numero: louvor.numero
       }
     })
       .then((result) => {
