@@ -24,7 +24,11 @@ const Louvores = {
       }
     })
       .then((result) => {
-        res.status(201).json(result); //return with ID -> 201 (CREATED)
+        if (result[1]) {
+          res.status(201).json(result[0]);
+        } else {
+          res.status(200).json({ codErro: "0001", descricaoErro: "Já existe um louvor com o mesmo número e mesmo autor." });
+        }
       })
       .catch(next);
   }
