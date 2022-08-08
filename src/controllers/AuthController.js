@@ -28,6 +28,10 @@ module.exports = {
   register(req, res, next) {
     const { username, password } = req.body;
 
+    if (password.length < 8) {
+      res.status(500).json({ error: "Digite uma senha com no mínimo 8 caracteres." });
+    }
+
     User.findOrCreate({
       where: {
         username: username,
