@@ -6,6 +6,7 @@ const Louvor = sequelize.define("louvor", {
   titulo: DataTypes.STRING,
   autor: DataTypes.STRING,
   numero: DataTypes.STRING,
+  categoria: DataTypes.STRING
 });
 
 const init = async () => {

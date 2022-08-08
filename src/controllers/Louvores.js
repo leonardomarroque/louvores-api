@@ -2,7 +2,12 @@ const Louvor = require("../database/models/Louvor");
 
 const Louvores = {
   all(req, res, next) {
-    Louvor.findAll()
+    Louvor.findAll({
+      order: [
+        ['autor', 'ASC'],
+        ['numero', 'ASC']
+      ]
+    })
       .then((result) => {
         res.json(result);
       })
@@ -20,14 +25,15 @@ const Louvores = {
       defaults: {
         titulo: louvor.titulo,
         autor: louvor.autor,
-        numero: louvor.numero
+        numero: louvor.numero,
+        categoria: louvor.categoria
       }
     })
       .then((result) => {
         if (result[1]) {
           res.status(201).json(result[0]);
         } else {
-          res.status(200).json({ codErro: "0001", descricaoErro: "Já existe um louvor com o mesmo número e mesmo autor." });
+          res.status(200).json({ error: "Existe um louvor com o mesmo número e autor" });
         }
       })
       .catch(next);
